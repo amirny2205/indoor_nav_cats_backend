@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from .models import CatModel
+from .serializers import CatSerializer
+from rest_framework import generics
 
-# Create your views here.
+
+class CatListCreate(generics.ListCreateAPIView):
+    queryset = CatModel.objects.all()
+    serializer_class = CatSerializer
+
+
+class CatDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = CatModel.objects.all()
+    serializer_class = CatSerializer
