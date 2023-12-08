@@ -120,7 +120,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+.env*
 .venv
 env/
 venv/
@@ -161,7 +161,3 @@ cython_debug/
 
 # Emacs
 *~
-
-
-# venv
-venv/
