@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  backend:
+    image: incb
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.dev_docker
+    command: bash -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    working_dir: /root/indoor_nav_cats_backend/
+    env_file: .env
+    depends_on:
+      - db
+    restart: "on-failure"
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "asdkdas;c.jpdofimnewpo"
+      POSTGRES_DB: incdb
+      POSTGRES_USER: catsuser
