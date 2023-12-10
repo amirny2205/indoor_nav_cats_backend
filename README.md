@@ -1,7 +1,5 @@
-сначала собираем имадж
+сначала собираем имадж:
+docker build -t incb
 
-** docker build -t incb **
-
-затем запускаем докер-композ
-
-** docker compose up **
+затем запускаем докер-композ:
+docker compose up
