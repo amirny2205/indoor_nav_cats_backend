@@ -18,7 +18,7 @@ class UserList(mixins.ListModelMixin,
 
 class MessageList(mixins.ListModelMixin,
                   generics.GenericAPIView):
-    querysel = MessageModel.objects.all()
+    queryset = MessageModel.objects.all()
     serializer_class = MessageSerializer
 
     def get(self, request, *args, **kwargs):
